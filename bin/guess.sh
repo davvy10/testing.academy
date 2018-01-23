@@ -3,7 +3,7 @@
 ANSWER=y
 while [[ $ANSWER =~ ^(y|YES|a|ANO|yes|ano)$ ]]; do
 clear
-echo "Myslim si cislo od 1 do 20"
+dialog --title 'Hra' --msgbox 'Myslim si cislo od 1 do 20' 10 20
 
 SECRET=$(( ( RANDOM % 20 ) + 1 ))
 TIP=0
@@ -15,9 +15,9 @@ read -p "Zadaj tip: " TIP
 
 echo "Tvoj tip: $TIP"
 
-while [[ -n $TIP ]] && [[ $TIP =~ ^[0-9]+$ ]] && [[ $TIP -ge 1 ]] && [[ $TIP -le 20 ]]; do  
-    echo "zadaj cislo"
-done
+#while [[ -n $TIP ]] && [[ $TIP =~ ^[0-9]+$ ]] && [[ $TIP -ge 1 ]] && [[ $TIP -le 20 ]]; do  
+  #  echo "zadaj cislo"
+#done
 
 
 if [ $TIP -gt $SECRET ]; then
@@ -38,7 +38,8 @@ if [ $POKUS -eq 0 ]; then
 
 done
 
-read -p "Chces hrat opat? Ak ano stlac "y", ak nie stlac hocico: " ANSWER
+read -p "Chces hrat opat? Ak ano stlac "y", ak nie stlac hocico a enter:" ANSWER
+
 done
 
         echo "Dakujem za hru"
